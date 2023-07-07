@@ -3,12 +3,21 @@ import user from '../Components/assets/user.png'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
 
     useEffect(() => {
         AOS.init();
       }, []);
+
+      const navigate = useNavigate();
+
+    
+      function clickHandler(){
+        navigate('/contact');
+    }
+
 
 
   return (
@@ -19,7 +28,7 @@ export default function Home() {
             <p className='font-bold text-3xl'>I'm Ishu Jangir</p>
             <p className='text-slate-600'>I'm a full stack developer with a passion for everything front-end. <br /> Welcome to my corner of the internet. I'm glad you're here!</p>
 
-            <button className='w-fit  mt-5 bg-[#4cb7b1] border-2 border-[#4cb7b1] text-white px-4 py-2 shadow-2xl transition-all relative hover:bg-transparent hover:text-black '>Hire Me</button>
+            <button onClick={clickHandler} className='w-fit  mt-5 bg-[#4cb7b1] border-2 border-[#4cb7b1] text-white px-4 py-2 shadow-2xl transition-all relative hover:bg-transparent hover:text-black '>Hire Me</button>
         </div>
 
 
